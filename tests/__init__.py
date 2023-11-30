@@ -1,6 +1,7 @@
 import json
 import pathlib
 import unittest
+import warnings
 from typing import Callable
 
 from recipe_scrapers import scrape_html
@@ -178,7 +179,14 @@ def load_tests(
     # Add legancy tests to test suite
     # Legacy tests use the previous test approach because they can't be migrated to
     # this data driven due to the scrapers using extra network requests.
-    legacy_test = loader.discover("tests/legacy")
-    suite.addTests(legacy_test)
+    try:
+        legacy_test = loader.discover("tests/legacy")
+        suite.addTests(legacy_test)
+    except ImportError:
+        msg = (
+            "Failed to import legacy tests; have they been removed from the test suite?\n"
+            "If so, perhaps you can remove this test code too.  Have a nice day."
+        )
+        warnings.warn(msg)
 
     return suite
