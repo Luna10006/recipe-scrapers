@@ -392,6 +392,7 @@ Scrapers available for:
 - `https://www.zaubertopf.de <https://www.zaubertopf.de>`_
 - `https://zeit.de/ (wochenmarkt) <https://www.zeit.de/zeit-magazin/wochenmarkt/index>`_
 - `https://zenbelly.com/ <https://zenbelly.com>`_
+- `https://sanitationtowelandpads.com/ <https://sanitationtowelandpads.com/>`_
 
 (*) offline saved files only
 
